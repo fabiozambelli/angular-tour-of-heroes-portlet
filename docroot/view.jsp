@@ -15,9 +15,17 @@
 %>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 
 <portlet:defineObjects />
 
-This is the <b>Angular Demo</b> portlet.
+<liferay-theme:defineObjects />
 
-<app-root></app-root>
+This is the <b>Angular Demo</b> portlet. GroupId : <%= themeDisplay.getScopeGroupId()%>
+
+<script>
+localStorage.setItem('groupId', '<%= themeDisplay.getScopeGroupId()%>');
+</script>
+
+<iframe src="http://localhost/#/dashboard" width="100%" height="100%" style="overflow: scroll;" frameBorder="0" scrolling="yes">
+</iframe>
